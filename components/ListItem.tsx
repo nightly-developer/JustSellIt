@@ -1,4 +1,4 @@
-import { View, StyleSheet, Image,ImageSourcePropType } from 'react-native'
+import { View, StyleSheet, Image,TouchableHighlight,ImageSourcePropType } from 'react-native'
 import React from 'react'
 
 import AppText from './AppText'
@@ -8,23 +8,29 @@ interface props{
   title: string,
   subtitle: string,
   imageSource: ImageSourcePropType,
+  onPress: () => void
 }
 
 export default function ListItem(props:props) {
   return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={props.imageSource}/>
-    <View>
-        <AppText style={styles.title} text={props.title}></AppText>
-        <AppText style={styles.subTitle} text={props.subtitle}></AppText>
-    </View>
-    </View>
+    <TouchableHighlight
+      underlayColor={colors.light}
+      onPress={props.onPress}>
+      <View style={styles.container}>
+        <Image style={styles.image} source={props.imageSource}/>
+      <View>
+          <AppText style={styles.title} text={props.title}></AppText>
+          <AppText style={styles.subTitle} text={props.subtitle}></AppText>
+      </View>
+      </View>
+    </TouchableHighlight>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
+    padding: 10
 
   },
   image: {

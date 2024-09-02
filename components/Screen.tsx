@@ -1,4 +1,4 @@
-import { FlatList, SafeAreaView, StyleSheet, View } from 'react-native'
+import { SafeAreaView, StyleSheet, View } from 'react-native'
 import React, { ReactNode } from 'react'
 import Constants from 'expo-constants'
 
