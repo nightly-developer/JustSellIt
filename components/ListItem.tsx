@@ -1,50 +1,56 @@
 import { View, StyleSheet, Image,TouchableHighlight,ImageSourcePropType } from 'react-native'
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import AppText from './AppText'
 import colors from '../constants/Colors'
+import { Swipeable } from 'react-native-gesture-handler';
 
 interface props{
   title: string,
   subtitle: string,
   imageSource: ImageSourcePropType,
-  onPress: () => void
+  onPress: () => void,
+  renderRightActions: () => ReactNode,
+  IconComponent: ReactNode,
 }
 
 export default function ListItem(props:props) {
   return (
-    <TouchableHighlight
-      underlayColor={colors.light}
-      onPress={props.onPress}>
-      <View style={styles.container}>
-        <Image style={styles.image} source={props.imageSource}/>
-      <View>
-          <AppText style={styles.title} text={props.title}></AppText>
-          <AppText style={styles.subTitle} text={props.subtitle}></AppText>
-      </View>
-      </View>
-    </TouchableHighlight>
-  )
+    <Swipeable renderRightActions={props.renderRightActions}>
+      <TouchableHighlight underlayColor={colors.light} onPress={props.onPress}>
+        <View style={styles.container}>
+          {props.IconComponent}
+          {props.imageSource && <Image style={styles.image} source={props.imageSource} />}
+          <View style={styles.detailsContainer}>
+            <AppText text={props.title} style={styles.title}/>
+            {props.subtitle && <AppText text={props.subtitle} style={styles.subTitle}></AppText>}
+          </View>
+        </View>
+      </TouchableHighlight>
+    </Swipeable>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    padding: 10
-
+    padding: 15,
+    backgroundColor: colors.white,
+    alignItems: "center",
+  },
+  detailsContainer: {
+    marginLeft: 10,
+    justifyContent: "center",
   },
   image: {
     width: 70,
     height: 70,
     borderRadius: 35,
-    marginHorizontal: 10,
-    backgroundColor: "portalGreen"
-  },
-  title: {
-    fontWeight: "500"
   },
   subTitle: {
+    color: colors.medium,
+  },
+  title: {
     fontWeight: "500",
-    color: colors.medium
-  }
-})
+  },
+});

@@ -1,10 +1,11 @@
 import Card from "@/components/Card"
+import { StyleSheet } from "react-native"
+
+import ListingDetailsScreen from "./screens/ListingDetailsScreen"
 import ViewImageScreen from "./screens/ViewImageScreen"
 import WelcomScreen from "./screens/WelcomScreen"
-import Colors from "@/constants/Colors"
-import { View,StyleSheet } from "react-native"
-import ListingDetailsScreen from "./screens/ListingDetailsScreen"
 import MessagesScreen from "./screens/MessagesScreen"
+import Colors from "@/constants/Colors"
 
 export default function Index() {
   // return <WelcomScreen />

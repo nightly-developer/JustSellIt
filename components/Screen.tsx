@@ -9,7 +9,7 @@ interface props{
 function Screen (props:props)  {
   return(
     <SafeAreaView>
-      <View>
+      <View style={styles.screen}>
         {props.children}
       </View>
     </SafeAreaView>
@@ -20,6 +20,7 @@ export default Screen
 
 const styles = StyleSheet.create({
   screen: {
-    paddingTop: Constants.statusBarHeight
-  }
-})
+    paddingTop: Constants.statusBarHeight,
+    flex: 1,
+  },
+});

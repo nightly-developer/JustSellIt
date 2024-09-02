@@ -2,7 +2,7 @@ import React from "react";
 import { Text, StyleSheet, Platform } from "react-native";
 
 interface props {
-  text: String,
+  text: string,
   style?: Object
 }
 

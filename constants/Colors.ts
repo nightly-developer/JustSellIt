@@ -1,9 +1,10 @@
 export default {
   primary: "#fc5c65",
+  backgroundColor: "#95b1ae",
   secondary: "#4ecdc4",
   black: "#000",
-  white: "fff",
-  backgroundColor: "#95b1ae",
+  white: "#fff",
   medium: "#6e6969",
-  light: '#f8f4f4'
+  light: "#f8f4f4",
+  danger: "#ff5252",
 };
