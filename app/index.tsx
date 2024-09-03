@@ -1,11 +1,17 @@
-import Card from "@/components/Card"
 import { StyleSheet } from "react-native"
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 
 import ListingDetailsScreen from "./screens/ListingDetailsScreen"
 import ViewImageScreen from "./screens/ViewImageScreen"
 import WelcomScreen from "./screens/WelcomScreen"
 import MessagesScreen from "./screens/MessagesScreen"
 import Colors from "@/constants/Colors"
+import Card from "@/components/Card"
+import Screen from "@/components/Screen";
+import Icon from "@/components/Icon";
+import ListItem from "@/components/ListItem";
+import AcountScreen from "./screens/AcountScreen";
 
 export default function Index() {
   // return <WelcomScreen />
@@ -14,7 +20,10 @@ export default function Index() {
   //   title={"Red Jacket"} subTitle={"$80"} imageSource={require("../app/assets/images/jacket.jpg")}></Card>
   //   </View>
   // return <ListingDetailsScreen title={"Red Jacket"} price={80} imageSource={require("../app/assets/images/jacket.jpg")}/>
-  return <MessagesScreen />
+  // return <GestureHandlerRootView>
+  //   <MessagesScreen />
+  // </GestureHandlerRootView>
+  return <AcountScreen/>
 }
 
 const styles = StyleSheet.create({

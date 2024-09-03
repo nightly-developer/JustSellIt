@@ -2,27 +2,30 @@ import React from "react";
 import { View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+export type MaterialCommunityIconsName = keyof typeof MaterialCommunityIcons.glyphMap;
+
 interface props {
-  MaterialCommunityIconName: keyof typeof MaterialCommunityIcons.glyphMap;
-  size?: number;
+  name: MaterialCommunityIconsName,
   backgroundColor?: string;
   iconColor?: string;
+  size?: number;
 }
 
-function Icon(props:props) {
+function Icon(props: props) {
+  const size = props.size ?? 40
   return (
     <View
        style={{
-        width: props.size ?? 0,
-        height: props.size ?? 0,
-        borderRadius: (props.size ?? 0) / 2,
+        width: props.size ?? size,
+        height: props.size ?? size,
+        borderRadius: (props.size ?? size) / 2,
         backgroundColor: props.backgroundColor,
         justifyContent: "center",
         alignItems: "center",
         marginHorizontal: 5
       }}
     >
-      <MaterialCommunityIcons name={props.MaterialCommunityIconName} color={props.iconColor} size={(props.size??1) * 0.5} />
+      <MaterialCommunityIcons name={props.name} color={props.iconColor??"white"} size={(props.size??size) * 0.5} />
     </View>
   );
 }

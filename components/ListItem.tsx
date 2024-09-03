@@ -7,11 +7,11 @@ import { Swipeable } from 'react-native-gesture-handler';
 
 interface props{
   title: string,
-  subtitle: string,
-  imageSource: ImageSourcePropType,
+  subtitle?: string,
+  imageSource?: ImageSourcePropType,
   onPress: () => void,
   renderRightActions: () => ReactNode,
-  IconComponent: ReactNode,
+  IconComponent?: ReactNode,
 }
 
 export default function ListItem(props:props) {

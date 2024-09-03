@@ -3,13 +3,14 @@ import React, { ReactNode } from 'react'
 import Constants from 'expo-constants'
 
 interface props{
-  children: ReactNode
+  children: ReactNode,
+  style?: Object,
 }
 
 function Screen (props:props)  {
   return(
     <SafeAreaView>
-      <View style={styles.screen}>
+      <View style={[styles.screen,props.style]}>
         {props.children}
       </View>
     </SafeAreaView>

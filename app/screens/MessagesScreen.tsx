@@ -1,5 +1,6 @@
-import { FlatList, StyleSheet } from 'react-native'
-import React from 'react'
+import { FlatList, StyleSheet,ImageSourcePropType } from 'react-native'
+import React, {useState} from 'react'
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Screen from '@/components/Screen'
 import ListItem from '@/components/ListItem'
@@ -7,11 +8,15 @@ import ListItemSeparator from '@/components/ListItemSeparator'
 import ListItemDeleteAction from '@/components/ListItemDeleteAction'
 import Icon from '@/components/Icon'
 
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-// type MaterialCommunityIconName = keyof typeof MaterialCommunityIcons.glyphMap;
+interface Message{
+  id: number,
+  title: string,
+  description: string,
+  image: ImageSourcePropType
+}
 
-const messages = [
+const initialMessages = [
   {
     id: 1,
     title: "T1",
@@ -26,7 +31,14 @@ const messages = [
   },
 ]
 
-const MessagesScreen = () => {
+export default function MessagesScreen() {
+  const [messages, setMessages] = useState<Message[]>(initialMessages);
+  const [refreshing, setRefreshing] = useState(false);
+
+  const handleDelete = (message: { id: number }) => {
+    setMessages(messages.filter(msg => msg.id !== message.id))
+  }
+
   let name:keyof typeof MaterialCommunityIcons.glyphMap = "close"
   return (
     <Screen>
@@ -38,17 +50,25 @@ const MessagesScreen = () => {
             title={item.title}
             subtitle={item.description}
             imageSource={item.image}
-            IconComponent={<Icon MaterialCommunityIconName="close" backgroundColor='#000' size={40} iconColor='#fff'/>}
+            // IconComponent={<Icon MaterialCommunityIconName={name} backgroundColor='#000' size={40} iconColor='#fff'/>}
             onPress={() => console.log("message selected", item)}
             renderRightActions={() =>
-              <ListItemDeleteAction onPress={() => console.log("delete message")} />}
+              <ListItemDeleteAction
+                onPress={() => handleDelete(item)} />}
           />}
         ItemSeparatorComponent={ListItemSeparator}
+        refreshing={refreshing}
+        onRefresh={() => {
+          setMessages([{
+            id: 3,
+            title: "T3",
+            description: "D3",
+            image: require('../assets/images/rick_profile.png')
+          }])
+        }}
       />
     </Screen>
   )
 }
-
-export default MessagesScreen
 
 const styles = StyleSheet.create({})
