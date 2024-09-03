@@ -20,11 +20,13 @@ export default function Index() {
   //   title={"Red Jacket"} subTitle={"$80"} imageSource={require("../app/assets/images/jacket.jpg")}></Card>
   //   </View>
   // return <ListingDetailsScreen title={"Red Jacket"} price={80} imageSource={require("../app/assets/images/jacket.jpg")}/>
-  // return <GestureHandlerRootView>
-  //   <MessagesScreen />
-  // </GestureHandlerRootView>
-  return <AcountScreen/>
+  // return <AcountScreen/>
+  return <GestureHandlerRootView style={{flex:1}}>
+    <MessagesScreen/>
+  </GestureHandlerRootView>
+  
 }
+  
 
 const styles = StyleSheet.create({
   cardContainer: {

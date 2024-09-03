@@ -39,7 +39,6 @@ export default function MessagesScreen() {
     setMessages(messages.filter(msg => msg.id !== message.id))
   }
 
-  let name:keyof typeof MaterialCommunityIcons.glyphMap = "close"
   return (
     <Screen>
       <FlatList
@@ -50,7 +49,6 @@ export default function MessagesScreen() {
             title={item.title}
             subtitle={item.description}
             imageSource={item.image}
-            // IconComponent={<Icon MaterialCommunityIconName={name} backgroundColor='#000' size={40} iconColor='#fff'/>}
             onPress={() => console.log("message selected", item)}
             renderRightActions={() =>
               <ListItemDeleteAction

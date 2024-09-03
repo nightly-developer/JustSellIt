@@ -16,7 +16,7 @@ interface props{
 
 export default function ListItem(props:props) {
   return (
-    <Swipeable renderRightActions={props.renderRightActions}>
+    <Swipeable renderRightActions={props.renderRightActions} onSwipeableOpen={direction => console.log(direction)}>
       <TouchableHighlight underlayColor={colors.light} onPress={props.onPress}>
         <View style={styles.container}>
           {props.IconComponent}
