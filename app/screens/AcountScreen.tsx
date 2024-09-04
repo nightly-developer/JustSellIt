@@ -4,9 +4,10 @@ import { StyleSheet, View, FlatList } from 'react-native'
 
 import Screen from '@/components/Screen'
 import ListItem from '@/components/ListItem'
-import Colors from '@/constants/Colors'
 import Icon,{MaterialCommunityIconsName } from '@/components/Icon'
 import ListItemSeparator from '@/components/ListItemSeparator'
+import defaultStyles from '@/constants/styles'
+const Colors = defaultStyles.Colors
 
 const menueItems:{
     title: string;

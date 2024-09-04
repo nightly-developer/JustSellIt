@@ -1,12 +1,10 @@
 import { FlatList, StyleSheet,ImageSourcePropType } from 'react-native'
-import React, {useState} from 'react'
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import React, { useState } from 'react'
 
 import Screen from '@/components/Screen'
 import ListItem from '@/components/ListItem'
 import ListItemSeparator from '@/components/ListItemSeparator'
 import ListItemDeleteAction from '@/components/ListItemDeleteAction'
-import Icon from '@/components/Icon'
 
 
 interface Message{

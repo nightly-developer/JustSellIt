@@ -1,9 +1,10 @@
 import { View, StyleSheet, Image, ImageSourcePropType } from 'react-native'
 import React from 'react'
 
-import colors from '../../constants/Colors';
 import AppText from '@/components/AppText'
 import ListItem from '@/components/ListItem';
+import defaultStyles from '@/constants/styles'
+const Colors = defaultStyles.Colors
 
 interface props {
   title: string,
@@ -23,6 +24,9 @@ export default function ListingDetailsScreen(props:props) {
             imageSource={require("../../app/assets/images/rick_profile.png")}
             title="Rick Sanchez"
             subtitle="5 Listing"
+            onPress={() => { }}
+            IconComponent={<></>}
+            renderRightActions={() => <></>}
           />
         </View>
       </View>
@@ -52,7 +56,7 @@ const styles = StyleSheet.create({
   },
   price: {
     fontWeight: "bold",
-    color: colors.secondary,
+    color: Colors.secondary,
     paddingHorizontal: 10,
     borderRadius: 5,
   },

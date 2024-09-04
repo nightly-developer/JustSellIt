@@ -13,6 +13,7 @@ import ListItem from "@/components/ListItem";
 import AcountScreen from "./screens/AcountScreen";
 import ListingsScreen from "./screens/ListingsScreen";
 import Screen from "@/components/Screen";
+import AppTextInput from "@/components/AppTextInput";
 
 export default function Index() {
   // return <WelcomScreen />
@@ -30,6 +31,8 @@ export default function Index() {
   // return <ListingsScreen/>
 
   // return <Screen children={<Text>Hello</Text>} />
+
+  return <Screen><AppTextInput name="email" otherProps={{placeholder:"email"}}/></Screen>
   
 }
   

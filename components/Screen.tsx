@@ -13,7 +13,7 @@ function Screen (props:props)  {
     <GestureHandlerRootView>
       <SafeAreaView>
         <View style={[styles.screen, props.style]}>
-            {props.children}
+          {props.children}
         </View>
       </SafeAreaView>
     </GestureHandlerRootView>

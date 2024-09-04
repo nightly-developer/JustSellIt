@@ -4,7 +4,6 @@ import { Image, ImageBackground, StyleSheet, Text, View } from "react-native"
 import AppButton from '@/components/AppButton';
 
 function WelcomScreen() {
-  console.log("welcome to my app")
   return (
     <ImageBackground
       blurRadius={10}

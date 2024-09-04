@@ -3,7 +3,8 @@ import React from 'react'
 
 import Screen from '@/components/Screen'
 import Card from '@/components/Card'
-import Colors from '@/constants/Colors'
+import defaultStyles from '@/constants/styles'
+const Colors = defaultStyles.Colors
 
 const listings: { id: number, title: string, price: number, image:ImageSourcePropType}[] = [
   {

@@ -2,7 +2,8 @@ import React from "react";
 import { View, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import Colors from "@/constants/Colors";
+import defaultStyles from '@/constants/styles'
+const Colors = defaultStyles.Colors
 
 interface props{
   onPress: () => void

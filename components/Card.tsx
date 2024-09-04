@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, StyleSheet, Image, ImageSourcePropType } from 'react-native';
-import Colors from '../constants/Colors';
 
-import AppText from '../components/AppText'
+
+import AppText from '@/components/AppText'
+import defaultStyles from '@/constants/styles'
+const Colors = defaultStyles.Colors
 
 interface props {
   title: string,

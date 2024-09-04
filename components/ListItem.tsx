@@ -1,23 +1,24 @@
 import { View, StyleSheet, Image,TouchableHighlight,ImageSourcePropType } from 'react-native'
 import React, { ReactNode } from 'react'
 
-import AppText from './AppText'
-import colors from '../constants/Colors'
+import AppText from '@/components/AppText'
 import { Swipeable } from 'react-native-gesture-handler';
+import defaultStyles from '@/constants/styles'
+const Colors = defaultStyles.Colors
 
 interface props{
   title: string,
   subtitle?: string,
   imageSource?: ImageSourcePropType,
+  IconComponent?: ReactNode,
   onPress: () => void,
   renderRightActions: () => ReactNode,
-  IconComponent?: ReactNode,
 }
 
 export default function ListItem(props:props) {
   return (
     <Swipeable renderRightActions={props.renderRightActions} onSwipeableOpen={direction => console.log(direction)}>
-      <TouchableHighlight underlayColor={colors.light} onPress={props.onPress}>
+      <TouchableHighlight underlayColor={Colors.light} onPress={props.onPress}>
         <View style={styles.container}>
           {props.IconComponent}
           {props.imageSource && <Image style={styles.image} source={props.imageSource} />}
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     padding: 15,
-    backgroundColor: colors.white,
+    backgroundColor: Colors.white,
     alignItems: "center",
   },
   detailsContainer: {
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
     borderRadius: 35,
   },
   subTitle: {
-    color: colors.medium,
+    color: Colors.medium,
   },
   title: {
     fontWeight: "500",

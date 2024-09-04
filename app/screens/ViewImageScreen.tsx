@@ -1,11 +1,11 @@
 import React from 'react';
-import { Image, StyleSheet, View, Text } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 
-import colors from '@/constants/Colors';
+import defaultStyles from '@/constants/styles'
+const Colors = defaultStyles.Colors
 
 function ViewImageScreen() {
-  console.log("hello from viewimagescreen!!")
   return (
     <View style={styles.container}>
       <View style={styles.closeIcon}>
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     left: 30,
   },
   container: {
-    backgroundColor: colors.black,
+    backgroundColor: Colors.black,
     flex: 1,
   },
   deleteIcon: {
