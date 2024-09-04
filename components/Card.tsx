@@ -11,7 +11,6 @@ interface props {
 }
 
 function Card(props: props) {
-  console.log(Colors.white)
   return (
     <View style={styles.card}>
       <Image style={styles.image} source={props.imageSource} />

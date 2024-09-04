@@ -1,6 +1,7 @@
 import { SafeAreaView, StyleSheet, View } from 'react-native'
 import React, { ReactNode } from 'react'
 import Constants from 'expo-constants'
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 interface props{
   children: ReactNode,
@@ -9,11 +10,13 @@ interface props{
 
 function Screen (props:props)  {
   return(
-    <SafeAreaView>
-      <View style={[styles.screen,props.style]}>
-        {props.children}
-      </View>
-    </SafeAreaView>
+    <GestureHandlerRootView>
+      <SafeAreaView>
+        <View style={[styles.screen, props.style]}>
+            {props.children}
+        </View>
+      </SafeAreaView>
+    </GestureHandlerRootView>
   )
 }
 
@@ -22,6 +25,6 @@ export default Screen
 const styles = StyleSheet.create({
   screen: {
     paddingTop: Constants.statusBarHeight,
-    flex: 1,
+    // flex: 1,
   },
 });
