@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, View } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React, { ReactNode } from 'react'
 import Constants from 'expo-constants'
 import { GestureHandlerRootView } from 'react-native-gesture-handler';

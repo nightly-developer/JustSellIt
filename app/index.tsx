@@ -1,5 +1,6 @@
 import { StyleSheet,Text,View } from "react-native"
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { useState } from "react";
 
 
 import ListingDetailsScreen from "./screens/ListingDetailsScreen"
@@ -14,6 +15,25 @@ import AcountScreen from "./screens/AcountScreen";
 import ListingsScreen from "./screens/ListingsScreen";
 import Screen from "@/components/Screen";
 import AppTextInput from "@/components/AppTextInput";
+import AppPicker, { item } from "@/components/AppPicker";
+
+const categories: item[]= [
+  {
+    label: "Furniture",
+    slug: "furniture",
+    value: 1
+  },
+  {
+    label: "Clothing",
+    slug: "clothing",
+    value:2
+  },
+  {
+    label: "Cameras",
+    slug: "cameras",
+    value: 3
+  }
+]
 
 export default function Index() {
   // return <WelcomScreen />
@@ -32,15 +52,24 @@ export default function Index() {
 
   // return <Screen children={<Text>Hello</Text>} />
 
-  return <Screen><AppTextInput name="email" otherProps={{placeholder:"email"}}/></Screen>
-  
+  const [category, setCategory] = useState<item | undefined>(undefined);
+  return <Screen>
+    <AppPicker
+      selectedItem={category}
+      onSelectItem={(item:item) => setCategory(item)}
+      items={categories}
+      placeholder="Category"
+      iconName="apps"
+    />
+    <AppTextInput iconName="email" otherProps={{ placeholder:"email" }} />
+  </Screen>
 }
   
 
-const styles = StyleSheet.create({
-  cardContainer: {
-    backgroundColor: Colors.backgroundColor,
-    padding: 30,
-    height: "100%"
-  }
-})
+// const styles = StyleSheet.create({
+//   cardContainer: {
+//     backgroundColor: Colors.backgroundColor,
+//     padding: 30,
+//     height: "100%"
+//   }
+// })
