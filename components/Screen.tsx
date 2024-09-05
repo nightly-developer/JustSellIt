@@ -11,8 +11,8 @@ interface props{
 function Screen (props:props)  {
   return(
     <GestureHandlerRootView>
-      <SafeAreaView>
-        <View style={[styles.screen, props.style]}>
+      <SafeAreaView style={styles.screen}>
+        <View style={props?.style}>
           {props.children}
         </View>
       </SafeAreaView>

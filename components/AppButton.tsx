@@ -8,13 +8,19 @@ const Colors = defaultStyles.Colors
 interface props {
   title: string,
   onPress: () => void,
-  color: keyof typeof Colors,
+  color?: string // keyof typeof Colors,
 }
 
-function AppButton(props:props) {
+function AppButton(props: props) {
+  // props.onPress()
   return (
-    <TouchableOpacity style={[styles.button, {backgroundColor: Colors[props.color] || "primary"}]}>
-        <Text style={styles.text} onPress={props.onPress}>{props.title}</Text>
+    <TouchableOpacity
+      style={{ ...styles.button, backgroundColor: props?.color ?? Colors.primary }}
+      onPress={props.onPress}
+    >
+      <Text style={styles.text}>
+        {props.title}
+      </Text>
     </TouchableOpacity>
   );
 }
@@ -33,7 +39,7 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 18,
     textTransform: 'uppercase',
-    fontWeight: "bold"
+    fontWeight: "bold",
   }
 })
 

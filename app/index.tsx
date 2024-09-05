@@ -16,6 +16,7 @@ import ListingsScreen from "./screens/ListingsScreen";
 import Screen from "@/components/Screen";
 import AppTextInput from "@/components/AppTextInput";
 import AppPicker, { item } from "@/components/AppPicker";
+import LoginScreen from "./screens/LoginScreen";
 
 const categories: item[]= [
   {
@@ -52,17 +53,19 @@ export default function Index() {
 
   // return <Screen children={<Text>Hello</Text>} />
 
-  const [category, setCategory] = useState<item | undefined>(undefined);
-  return <Screen>
-    <AppPicker
-      selectedItem={category}
-      onSelectItem={(item:item) => setCategory(item)}
-      items={categories}
-      placeholder="Category"
-      iconName="apps"
-    />
-    <AppTextInput iconName="email" otherProps={{ placeholder:"email" }} />
-  </Screen>
+  // const [category, setCategory] = useState<item | undefined>(undefined);
+  // return <Screen>
+  //   <AppPicker
+  //     selectedItem={category}
+  //     onSelectItem={(item:item) => setCategory(item)}
+  //     items={categories}
+  //     placeholder="Category"
+  //     iconName="apps"
+  //   />
+  //   <AppTextInput iconName="email" otherProps={{ placeholder:"email" }} />
+  // </Screen>
+
+  return <LoginScreen/>
 }
   
 

@@ -8,7 +8,7 @@ const Colors = defaultStyles.Colors
 
 interface props{
   iconName: MaterialCommunityIconsName,
-  otherProps?: object
+  otherProps?: Object
 }
 
 function AppTextInput(props:props) {
