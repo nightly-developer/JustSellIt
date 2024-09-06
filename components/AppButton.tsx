@@ -8,7 +8,7 @@ const Colors = defaultStyles.Colors
 interface props {
   title: string,
   onPress: () => void,
-  color?: string // keyof typeof Colors,
+  color?: string 
 }
 
 function AppButton(props: props) {
