@@ -1,4 +1,4 @@
-import { Image, StyleSheet } from 'react-native'
+import { Image, StyleSheet, Text } from 'react-native'
 import React from 'react'
 import * as Yup from 'yup'
 import { Formik } from 'formik'
@@ -31,41 +31,35 @@ function LoginScreen() {
         style={styles.logo}
         source={require("../assets/images/logo-red.png")}
       />
-      <Formik
+      <AppForm
         initialValues={{ email: '', password: '' }}
         onSubmit={values => console.log(values)}
         validationSchema={validationSchema}
       >
-        {() => (
-          <>
-            <AppFormField
-              name='email'
-              iconName="email"
-              otherProps={{
-                autoCapitialize: "none",
-                placeholder: "Email",
-                keyboardType: "email-address",
-                textcontentType: "emailAddress",
-                autoCorrect: false,
-              }}
-            />
-
-            <AppFormField
-              name="password"
-              iconName="lock"
-              otherProps={{
-                autoCapitialize: "none",
-                placeholder: "Passwrod",
-                textContentType: "password",
-                autoCorrect: false,
-                secureTextEntry: true,
-              }}
-            />
-
-            <SubmitButton title="Login" />
-          </>
-        )}
-      </Formik>
+        <AppFormField
+          name='email'
+          iconName="email"
+          otherProps={{
+            autoCapitialize: "none",
+            placeholder: "Email",
+            keyboardType: "email-address",
+            textcontentType: "emailAddress",
+            autoCorrect: false,
+          }}
+        />
+        <AppFormField
+          name="password"
+          iconName="lock"
+          otherProps={{
+            autoCapitialize: "none",
+            placeholder: "Passwrod",
+            textContentType: "password",
+            autoCorrect: false,
+            secureTextEntry: true,
+          }}
+        />
+        <SubmitButton title="Login" />
+      </AppForm>
     </Screen>
   )
 }
